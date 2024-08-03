@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	resp, err := http.Get("http://go-postgres-api:8080/")
+	resp, err := http.Get("http://go-server:8080/")
 	if err != nil {
 		fmt.Println(err)
 		return
