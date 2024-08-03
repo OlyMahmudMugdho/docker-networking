@@ -1,3 +1,3 @@
-module github.com/OlyMahmudMugdho/docker-networking/go-server
+module api
 
 go 1.22.5
