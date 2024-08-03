@@ -27,3 +27,9 @@ run-client-detached:
 
 stop-all:
 	@docker stop go-server go-client postgres
+
+delete-server:
+	docker rmi go-server -f
+
+delete-client:
+	docker rmi go-client -f
