@@ -1,0 +1,29 @@
+services:
+  api:
+    image: go-server
+    container_name: go-server
+    networks:
+      - mynetwork
+  db:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - 5432:5432
+    networks:
+      - mynetwork
+  app:
+    image: go-client
+    container_name: go-client
+    networks:
+      - mynetwork
+    depends_on: 
+      - api
+      - db
+  
+      
+networks:
+  mynetwork:
+    driver:
+      bridge
